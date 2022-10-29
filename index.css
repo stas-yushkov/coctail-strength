@@ -1,3 +1,27 @@
 body {
   background-color: rgb(56, 64, 64);
 }
+
+ol {
+  list-style: none;
+}
+
+.strength1-label {
+  padding-right: 10px;
+  font-size: 25px;
+}
+
+.volume1-label {
+  padding-right: 43px;
+  font-size: 25px;
+}
+
+.strength2-label {
+  padding-right: 10px;
+  font-size: 25px;
+}
+
+.volume2-label {
+  padding-right: 43px;
+  font-size: 25px;
+}
