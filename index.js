@@ -50,17 +50,31 @@ console.log(`
 //https://studfile.net/preview/8852847/page:9/
 
 const s1 = document.querySelector('#strength1-progress');
-const sr = document.querySelector('.strength1-percent');
-sr.textContent = `${s1.value}%`;
+const sr1 = document.querySelector('.strength1-percent');
+sr1.textContent = `${s1.value}%`;
 s1.addEventListener('input', (e) => {
-  sr.textContent = `${e.target.value}%`;
+  sr1.textContent = `${e.target.value}%`;
 });
 
 const v1 = document.querySelector('#volume1-progress');
-const vr = document.querySelector('.volume1-percent');
-vr.textContent = `${v1.value}мл`;
+const vr1 = document.querySelector('.volume1-percent');
+vr1.textContent = `${v1.value}мл`;
 v1.addEventListener('input', (e) => {
-  vr.textContent = `${e.target.value}мл`;
+  vr1.textContent = `${e.target.value}мл`;
+});
+
+const s2 = document.querySelector('#strength2-progress');
+const sr2 = document.querySelector('.strength2-percent');
+sr2.textContent = `${s2.value}%`;
+s2.addEventListener('input', (e) => {
+  sr2.textContent = `${e.target.value}%`;
+});
+
+const v2 = document.querySelector('#volume2-progress');
+const vr2 = document.querySelector('.volume2-percent');
+vr2.textContent = `${v2.value}мл`;
+v2.addEventListener('input', (e) => {
+  vr2.textContent = `${e.target.value}мл`;
 });
 
 // const coctailsArrTEST = [
