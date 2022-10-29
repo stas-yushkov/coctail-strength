@@ -81,15 +81,13 @@ const recalc = () => {
     , initialWeight
   ); //volume
 
-  if (!weight) {
-    result.textContent = `ти тверезий!`;
-    return;
-  }
-
   const strength = Math.floor(alcoholWeight / weight * 10) / 10;
-  console.table(coctailsArr);
-  console.log('strength', strength);
-  result.textContent = `ти бухий на ${strength}%`;
+
+  if (!strength) {
+    result.textContent = 'Схоже тут не про алкоголь....';
+  } else {
+    result.textContent = `Коктейль міцний на ${strength}%`;
+  }
 }
 
 
