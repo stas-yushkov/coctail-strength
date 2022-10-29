@@ -70,7 +70,7 @@ const volumeLabelTwo = document.querySelector('.volume2-percent');
 const resultButton = document.querySelector('button.button');
 
 const recalc = () => {
-  const initialWeight = 0.001;
+  const initialWeight = 0;
   const alcoholWeight = coctailsArr.reduce(
     (prev, curr, currIdx) => (prev + curr.weight * coctailsArr[currIdx].strength)
     , initialWeight
@@ -81,7 +81,12 @@ const recalc = () => {
     , initialWeight
   ); //volume
 
-  const strength = Math.floor(alcoholWeight / weight * 100) / 100;
+  if (!weight) {
+    result.textContent = `ти тверезий!`;
+    return;
+  }
+
+  const strength = Math.floor(alcoholWeight / weight * 10) / 10;
   console.table(coctailsArr);
   console.log('strength', strength);
   result.textContent = `ти бухий на ${strength}%`;
@@ -122,5 +127,4 @@ resultButton.addEventListener('click', (e) => {
 //TODO: add ingridient name
 // enlarge volume  input max value
 //щоб числа не стрибали
-//формула ламається. дебажити/ 0.001
 // починати роботу з нової гілки
