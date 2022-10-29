@@ -56,18 +56,18 @@ const coctailsArr = [
   { name: 'віскі', weight: 90, strength: 40 },
   { name: 'вермут', weight: 30, strength: 16 },
 ];
-const result = document.querySelector('p#result');
-const strengthInputOne = document.querySelector('#strength1-progress');
-const strengthLabelOne = document.querySelector('.strength1-percent');
-const volumeInputOne = document.querySelector('#volume1-progress');
-const volumeLabelOne = document.querySelector('.volume1-percent');
+const strengthInputOne = document.querySelector('input.JS-strength-input-1');
+const strengthLabelOne = document.querySelector('span.JS-strength-result-1');
+const volumeInputOne = document.querySelector('input.JS-volume-input-1');
+const volumeLabelOne = document.querySelector('span.JS-volume-result-1');
 
-const strengthInputTwo = document.querySelector('#strength2-progress');
-const strengthLabelTwo = document.querySelector('.strength2-percent');
-const volumeInputTwo = document.querySelector('#volume2-progress');
-const volumeLabelTwo = document.querySelector('.volume2-percent');
+const strengthInputTwo = document.querySelector('input.JS-strength-input-2');
+const strengthLabelTwo = document.querySelector('span.JS-strength-result-2');
+const volumeInputTwo = document.querySelector('input.JS-volume-input-2');
+const volumeLabelTwo = document.querySelector('span.JS-volume-result-2');
 
-const resultButton = document.querySelector('button.button');
+const result = document.querySelector('p.JS-result');
+const resultButton = document.querySelector('button.JS-result-button');
 
 const recalc = () => {
   const initialWeight = 0;
@@ -84,9 +84,9 @@ const recalc = () => {
   const strength = Math.floor(alcoholWeight / weight * 10) / 10;
 
   if (!strength) {
-    result.textContent = 'Схоже тут не про алкоголь....';
+    result.textContent = '... схоже, тут безалкогольний коктейль ...';
   } else {
-    result.textContent = `Коктейль міцний на ${strength}%`;
+    result.textContent = `${strength}%`;
   }
 }
 
@@ -128,3 +128,4 @@ resultButton.addEventListener('click', (e) => {
 // починати роботу з нової гілки
 // додати поля іннпут для ручного введення
 // обирати напої із списку
+// improve querySelector to 'ALL'
