@@ -1,33 +1,50 @@
-// const mass1 = 100; //ml
-// const mass2 = 100; //ml
-// const mass3 = 100; //ml
-// const mass4 = 100; //ml
-// const mass5 = 100; //ml
+const coctailsArr = [
+  { name: 'віскі', weight: 90, strength: 40 },
+  { name: 'вермут', weight: 30, strength: 16 },
+  { name: 'лід', weight: 0, strength: 0, },
+];
 
-const volumeArr = [100, 100];
+const initialWeight = 0;
+const alcoholWeight = coctailsArr.reduce(
+  (prev, curr, currIdx) => (prev + curr.weight * coctailsArr[currIdx].strength)
+  , initialWeight
+); //alcoholVolume
 
-// const strength1 = 40; //%
-// const strength2 = 40; //%
-// const strength3 = 40; //%
-// const strength4 = 40; //%
-// const strength5 = 40; //%
+const weight = coctailsArr.reduce(
+  (prev, curr) => (prev + curr.weight)
+  , initialWeight
+); //volume
 
-const strengthArr = [40, 20];
+const strength = alcoholWeight / weight;
 
-// const coctailsArr = [
-//   { strength: 40, volume: 100 },
-//   { strength: 40, volume: 100 },
-// ];
+console.log(`
+РОЗРАХУНОК МІЦНОСТІ КОКТЕЛІВ
 
-const alcoholVolume = volumeArr.reduce(
-  (prev, curr, currIdx) => (prev + curr * strengthArr[currIdx])
-  , 0
+На підприємствах громадського харчування рецептури і технологію приготування коктейлів розробляють технологи підприємств. Складовими компонентами коктейлів є найрізноманітніші напої, при змішуванні яких міняються характеристики і міцність одержуваних коктейлів. Часто виникає питання про міцність коктейлів, що готуються. Для розрахунку міцності користуються спеціальною методикою.
+
+Суть її полягає в наступному:
+1) визначити вміст спирту в кожному компоненті, для чого зміст алкоголю умножають на норму закладки;
+2) розрахувати загальний зміст спирту, складаючи всі складові;
+3) провести розрахунок міцності з урахуванням норми виходу коктейля.
+Якщо коктейлі готують з льодом, то до загального виходу слід додати кількість льоду.
+
+Розглянемо даний розрахунок на прикладі:
+Для приготування коктейля використовують наступні напої:
+віскі 90 г (міцність 40%), вермут 30 г (міцність 16%).
+Розрахувати міцність приготованого коктейля.
+
+Рішення.
+1. Розраховуємо вміст спирту у віскі. 90x40 = 36 г
+2. Розраховуємо вміст спирту у вермуті. 30x16 = 4,8 р.
+3. Визначаємо загальний вміст спирту в обох напоях 36 + 4,8 = 40,8 р.
+4. Розраховуємо вихід напою. 90+30 = 120 р.
+5. Розраховуємо міцність отриманого коктейля. 120 г містять 40,8 г спирти
+100 г х г спирту
+х= (40,8 х 100) / 120 = 34 (%).
+
+Відповідь: міцність отриманого коктейля 34%.
+
+А JS каже: ${strength}%`
 );
-
-const volume = volumeArr.reduce((prev, curr) => (prev + curr), 0);
-
-const strength = alcoholVolume / volume;
-
-console.log(`strength: ${strength}%`);
 
 //https://studfile.net/preview/8852847/page:9/
