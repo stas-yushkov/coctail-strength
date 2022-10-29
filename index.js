@@ -123,3 +123,4 @@ resultButton.addEventListener('click', (e) => {
 // enlarge volume  input max value
 //щоб числа не стрибали
 //формула ламається. дебажити/ 0.001
+// починати роботу з нової гілки
