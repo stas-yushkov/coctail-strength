@@ -128,3 +128,5 @@ resultButton.addEventListener('click', (e) => {
 // enlarge volume  input max value
 //щоб числа не стрибали
 // починати роботу з нової гілки
+// додати поля іннпут для ручного введення
+// обирати напої із списку
