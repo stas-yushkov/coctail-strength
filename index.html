@@ -13,9 +13,50 @@
         JS скрипти наразі вимкнуто в браузері! Будь ласка, увімкніть їх. Або замініть браузер на нормальний:)
       </p>
     </noscript>
-    <section>
-      <h1>HEllo World</h1>
-      <p>all is OK</p>
+    <section class="progressBars">
+      <h1>Розрахунок міцності коктейлів (або пийте відповідально)</h1>
+      <ol>
+        <li class="first">
+          <div class="number1">1</div>
+
+          <div class="strength1">
+            <label class="strength1-label" for="strength1">Міцність</label>
+            <progress id="strength1-progress" max="100" value="35"></progress>
+            <span class="strength1-percent">35%</span>
+          </div>
+
+          <div class="volume1">
+            <label class="volume1-label" for="volume1">Об'єм</label>
+            <progress id="volume1-progress" max="100" value="15"></progress>
+            <span class="volume1-percent">15мл</span>
+          </div>
+        </li>
+
+        <li class="second">
+          <div class="number2">2</div>
+        
+          <div class="strength2">
+            <label class="strength2-label" for="strength1">Міцність</label>
+            <progress id="strength2-progress" max="100" value="55"></progress>
+            <span class="strength2-percent">55%</span>
+          </div>
+        
+          <div class="volume2">
+            <label class="volume2-label" for="volume1">Об'єм</label>
+            <progress id="volume2-progress" max="100" value="35"></progress>
+            <span class="volume2-percent">35мл</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+    <section class="results">
+      <img 
+      src="https://images.pexels.com/photos/67112/pexels-photo-67112.jpeg"
+      alt="Macbook Air на сірому дерев'яному столі"
+      width="100">
+      <p>Результат обчислення:</p>
+      <p>ти бухий!</p>
+      <button class="button">Розрахувати</button>
     </section>
     <script src="./index.js"></script>
   </body>
