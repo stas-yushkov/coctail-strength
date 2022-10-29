@@ -48,3 +48,37 @@ console.log(`
 );
 
 //https://studfile.net/preview/8852847/page:9/
+
+const s1 = document.querySelector('#strength1-progress');
+const sr = document.querySelector('.strength1-percent');
+sr.textContent = `${s1.value}%`;
+s1.addEventListener('input', (e) => {
+  sr.textContent = `${e.target.value}%`;
+});
+
+const v1 = document.querySelector('#volume1-progress');
+const vr = document.querySelector('.volume1-percent');
+vr.textContent = `${v1.value}мл`;
+v1.addEventListener('input', (e) => {
+  vr.textContent = `${e.target.value}мл`;
+});
+
+// const coctailsArrTEST = [
+//   { name: 'віскі', weight: 90, strength: 40 },
+//   { name: 'вермут', weight: 30, strength: 16 },
+//   { name: 'лід', weight: 0, strength: 0, },
+// ];
+
+// const initialWeightTEST = 0;
+// const alcoholWeightTEST = coctailsArrTEST.reduce(
+//   (prev, curr, currIdx) => (prev + curr.weight * coctailsArrTEST[currIdx].strength)
+//   , initialWeightTEST
+// ); //alcoholVolume
+
+// const weightTEST = coctailsArrTEST.reduce(
+//   (prev, curr) => (prev + curr.weight)
+//   , initialWeightTEST
+// ); //volume
+
+// const strengthTEST = alcoholWeightTEST / weightTEST;
+// console.log('strengthTEST', strengthTEST);
