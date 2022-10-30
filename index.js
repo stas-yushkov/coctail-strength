@@ -3,17 +3,12 @@ const coctailsArr = [
   { name: 'вермут', weight: 30, strength: 16 },
 ];
 
-const strengthInputOne = document.querySelector('input.JS-strength-input-1');
-const strengthLabelOne = document.querySelector('span.JS-strength-result-1');
-const volumeInputOne = document.querySelector('input.JS-volume-input-1');
-const volumeLabelOne = document.querySelector('span.JS-volume-result-1');
+const strengthInputList = document.querySelectorAll('input.JS-strength-input');
+const strengthLabelList = document.querySelectorAll('span.JS-strength-result');
+const volumeInputList = document.querySelectorAll('input.JS-volume-input');
+const volumeLabelList = document.querySelectorAll('span.JS-volume-result');
 
-const strengthInputTwo = document.querySelector('input.JS-strength-input-2');
-const strengthLabelTwo = document.querySelector('span.JS-strength-result-2');
-const volumeInputTwo = document.querySelector('input.JS-volume-input-2');
-const volumeLabelTwo = document.querySelector('span.JS-volume-result-2');
-
-const result = document.querySelector('p.JS-result');
+const resultText = document.querySelector('p.JS-result');
 const resultButton = document.querySelector('button.JS-result-button');
 
 const recalc = () => {
@@ -31,35 +26,46 @@ const recalc = () => {
   const strength = Math.floor(alcoholWeight / weight * 10) / 10;
 
   if (!strength) {
-    result.textContent = '... схоже, тут безалкогольний коктейль ...';
-  } else {
-    result.textContent = `${strength}%`;
+    resultText.textContent = '... схоже, тут безалкогольний коктейль ...';
+    return;
   }
+  if (strength >= 90) {
+    resultText.textContent = `${strength}% ... розірве в друзки ...`;
+    return;
+  }
+  resultText.textContent = `${strength}%`;
 }
 
-strengthLabelOne.textContent = `${strengthInputOne.value}%`;
-strengthInputOne.addEventListener('input', (e) => {
-  strengthLabelOne.textContent = `${Number(e.target.value)}%`;
-  coctailsArr[0].strength = Number(e.target.value);
-});
+strengthLabelList.forEach((_, idx) => {
+  strengthLabelList[idx].textContent = `${strengthInputList[idx].value}%`;
+  volumeLabelList[idx].textContent = `${volumeInputList[idx].value}мл`;
+  if (!coctailsArr[idx]) {
+    coctailsArr.push({
+      strength: Number(strengthInputList[idx].value),
+      weight: Number(volumeInputList[idx].value),
+      name: coctailsArr[idx]?.name || idx
+    })
+  } else {
+    coctailsArr[idx].strength = Number(strengthInputList[idx].value);
+    coctailsArr[idx].weight = Number(volumeInputList[idx].value);
+    coctailsArr[idx].name = coctailsArr[idx]?.name || idx;
+  }
+})
 
-volumeLabelOne.textContent = `${volumeInputOne.value}мл`;
-volumeInputOne.addEventListener('input', (e) => {
-  volumeLabelOne.textContent = `${Number(e.target.value)}мл`;
-  coctailsArr[0].weight = Number(e.target.value)
-});
+strengthInputList.forEach((item, idx) => {
+  item.addEventListener('input', (e) => {
+    strengthLabelList[idx].textContent = `${Number(e.target.value)}%`;
+    coctailsArr[idx].strength = Number(e.target.value);
+    console.table(coctailsArr);
+  });
+})
 
-strengthLabelTwo.textContent = `${strengthInputTwo.value}%`;
-strengthInputTwo.addEventListener('input', (e) => {
-  strengthLabelTwo.textContent = `${Number(e.target.value)}%`;
-  coctailsArr[1].strength = Number(e.target.value);
-});
-
-volumeLabelTwo.textContent = `${volumeInputTwo.value}мл`;
-volumeInputTwo.addEventListener('input', (e) => {
-  volumeLabelTwo.textContent = `${Number(e.target.value)}мл`;
-  coctailsArr[1].weight = Number(e.target.value);
-});
+volumeInputList.forEach((item, idx) => {
+  item.addEventListener('input', (e) => {
+    volumeLabelList[idx].textContent = `${Number(e.target.value)}мл`;
+    coctailsArr[idx].weight = Number(e.target.value);
+  });
+})
 
 resultButton.addEventListener('click', (e) => {
   recalc();
