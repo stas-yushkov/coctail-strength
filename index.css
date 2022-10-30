@@ -1,27 +1,125 @@
 body {
-  background-color: rgb(56, 64, 64);
+  /* background-color: rgb(117, 82, 82); */
+  background-image: url(./images/fon.jpg);
+  
+}
+
+
+h1 {
+  font-family: sans-serif;
+  text-align: center;
+
+  font-size: 40px;
+  font-weight:bolder;
+}
+
+.description {
+  font-family: sans-serif;
+  text-align: center;
+
+  font-size: 25px;
+  font-weight:300;
 }
 
 ol {
   list-style: none;
 }
 
-.strength1-label {
+.bars-results {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.progress-bars {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.current-number {
+  font-family: sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.number {
+  font-family: sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+
+  padding-left: 10px;
+}
+
+.sign {
+  font-family: sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+progress {
+  height: 30px;
+  width: 300px;
+  vertical-align: bottom;
+}
+
+.strength, .volume {
+  display: flex;
+}
+
+.strength-label {
+  font-family: serif;
+  font-size: 25px;
+  font-weight: bold;
   padding-right: 10px;
-  font-size: 25px;
+  
 }
 
-.volume1-label {
+.volume-label {
+  font-family: serif;
+  font-size: 25px;
+  font-weight: bold;
+
   padding-right: 43px;
-  font-size: 25px;
 }
 
-.strength2-label {
-  padding-right: 10px;
-  font-size: 25px;
+.results {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.volume2-label {
-  padding-right: 43px;
+.results-title {
+  font-family: sans-serif;
+    
+  font-size: 40px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.results-desc {
+  font-family: sans-serif;
+
   font-size: 25px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+button {
+  width: auto;
+  height: 50px;
+
+  font-family: sans-serif;
+  
+  font-size: 25px;
+  font-weight: bolder;
+  align-items: center;
+
+  background: rgb(237, 158, 102);
+  border: 0px;
+  border-radius: 10px;
+}
+
+button:hover,
+button:focus {
+  background: rgb(239, 91, 12);
+  cursor:pointer;
 }
