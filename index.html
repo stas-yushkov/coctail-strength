@@ -5,14 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>алкоШот</title>
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.css"
+      integrity="sha512-Y0MM+V6ymRKN2zStTqzQ227DWhhp4Mzdo6gnlRnuaNCbc+YN/ZH0sBCLTM4M0oSy9c9VKiCvd4Jk44aCLrNS5Q=="
+      crossorigin="anonymous" 
+      referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./index.css"/>
   </head>
   <body>
     <noscript>
-      <p>
         JS скрипти наразі вимкнуто в браузері! Будь ласка, увімкніть їх. Або
         замініть браузер на нормальний:)
-      </p>
     </noscript>
     <section class="main">
       <h1>Розрахунок міцності коктейлів (або пийте відповідально)</h1>
@@ -26,55 +29,52 @@
       <div class="progress-bars">
 
       <ol>
-        <li class="first">
-          <div class="inputs">
-            <p class="current-number">1</p>
+        <li class="ingredient">
+          <p class="current-number">1</p>
 
-            <div class="strength">
-              <label 
-              class="strength-label" 
-              for="strength">Міцність
-              </label>
+          <div class="strength">
+            <label 
+            class="strength-label" 
+            for="strength">Міцність
+            </label>
 
-              <input 
-              type="range" 
-              id="strength-progress" 
-              class="JS-strength-input-1" 
-              max="100" 
-              value="35" 
-              />
+            <input 
+            type="range" 
+            id="strength-progress" 
+            class="JS-strength-input-1" 
+            max="100" 
+            value="35" 
+            />
 
-              <!-- <span class="strength1-percent JS-strength-result-1">35%</span> -->
-              <div class="strength-percent">
-                <span class="number">35</span>
-                <span class="sign">%</span>
-              </div>
-
+            <div class="strength-percent">
+              <span class="number">35</span>
+              <span class="sign">%</span>
             </div>
 
-            <div class="volume">
-              <label 
-              class="volume-label" 
-              for="volume">
-              Об'єм
-              </label>
-              <input
-                type="range"
-                id="volume-progress"
-                class="JS-volume-input-1"
-                max="150"
-                value="55"
-              />
-              <!-- <span class="volume1-percent JS-volume-result-1">90мл</span> -->
-              <div class="strength-volume">
-                <span class="number">55</span>
-                <span class="sign">ml</span>
-              </div>
+          </div>
+
+          <div class="volume">
+            <label 
+            class="volume-label" 
+            for="volume">
+            Об'єм
+            </label>
+            <input
+              type="range"
+              id="volume-progress"
+              class="JS-volume-input-1"
+              max="500"
+              value="55"
+            />
+
+            <div class="strength-volume">
+              <span class="number">55</span>
+              <span class="sign">ml</span>
             </div>
           </div>
         </li>
 
-        <li class="second">
+        <li class="ingredient">
           <p class="current-number">2</p>
 
           <div class="strength">
@@ -91,7 +91,7 @@
             max="100" 
             value="45"
             />
-            <!-- <span class="strength2-percent JS-strength-result-2">45%</span> -->
+
             <div class="strength-percent">
               <span class="number">45</span>
               <span class="sign">%</span>
@@ -102,24 +102,24 @@
             <label class="volume-label" for="volume">Об'єм</label>
             <input
               type="range"
-              id="volume-progress"
+              id="volume"
               class="JS-volume-input-2"
-              max="150"
+              max="500"
               value="25"
             />
-            <!-- <span class="volume2-percent JS-volume-result-2">25мл</span> -->
+
             <div class="strength-volume">
               <span class="number">25</span>
               <span class="sign">ml</span>
             </div>
           </div>
 
-        <li class="third">
+        <li class="ingredient">
           <p class="current-number">3</p>
         
           <div class="strength">
             <label class="strength-label" for="strength">Міцність</label>
-            <!-- <progress id="strength-progress" max="100" value="15"></progress> -->
+
             <input 
             type="range" 
             id="strength-progress" 
@@ -135,12 +135,12 @@
         
           <div class="volume">
             <label class="volume-label" for="volume1">Об'єм</label>
-            <!-- <progress id="volume-progress" max="100" value="30"></progress> -->
+
             <input 
             type="range" 
             id="volume-progress" 
             class="JS-volume-input-3" 
-            max="150" 
+            max="500" 
             value="30"
             />
 
@@ -151,7 +151,7 @@
           </div>
         </li>
 
-        <li class="fourth">
+        <li class="ingredient">
           <p class="current-number">4</p>
         
       <div class="strength">
@@ -160,8 +160,6 @@
         for="strength">
         Міцність
         </label>
-
-        <!-- <progress id="strength-progress" max="100" value="15"></progress> -->
 
         <input 
         type="range" 
@@ -184,13 +182,11 @@
         Об'єм
         </label>
 
-        <!-- <progress id="volume-progress" max="100" value="30"></progress> -->
-
         <input 
         type="range" 
         id="volume-progress" 
         class="JS-volume-input-3" 
-        max="150" 
+        max="500" 
         value="50"
         />
       
@@ -209,8 +205,9 @@
           <img 
           src="./images/алкоШот.png" 
           alt="алкаШот" 
-          width="150"
+          width="150" 
           />
+
         </div>
         <p class="results-title">Міцність коктейлю:</p>
         <p class="results-desc JS-result">... (тицяй велику кнопку нижче) ...</p>
