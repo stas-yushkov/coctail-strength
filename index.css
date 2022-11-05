@@ -8,15 +8,24 @@ body {
 
 /* MAIN */
 
+.main {
+  padding: 0 40px;
+  margin: 0 auto;
+  
+}
+
 h1 {
   /* font-family: Roboto, sans-serif; */
   text-align: center;
+  
 
   font-size: 40px;
   font-weight: bolder;
-  line-height: 60px;
+  line-height: 1.5;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  margin: 0;
+  padding: 30px 0;
 }
 
 .description {
@@ -30,25 +39,29 @@ h1 {
 
   margin-left: auto;
   margin-right: auto;
-  
+  padding: 0 0 30px;
+  margin: 0;
 }
 
 /* BARS */
 
 ol {
   list-style: none;
-  padding: 0;
+  padding: 0 10px;
+  margin: 0;
 }
 
 .bars-results {
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin: 0;
+  padding: 30px 50px;
 }
 
 .progress-bars {
-  margin-right: 100px;
-  margin-left: auto;
+  /* margin-right: 100px;
+  margin-left: auto; */
 }
 
 .current-number {
@@ -82,7 +95,7 @@ ol {
 input {
   cursor: pointer;
   height: 30px;
-  width: 300px;
+  width: 180px;
   vertical-align: bottom;
 
 }
@@ -90,6 +103,10 @@ input {
 .strength,
 .volume {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-between; */
+  width: 100%;
 }
 
 .strength-label {
@@ -111,8 +128,9 @@ input {
 /* RESULTS */
 
 .results {
-  margin-left: 100px;
-  margin-right: auto;
+  /* margin-left: 100px;
+  margin-right: auto; */
+  padding: 0 10px;
 }
 
 .results-title {
