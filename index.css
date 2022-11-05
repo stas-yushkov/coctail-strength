@@ -1,28 +1,40 @@
 body {
-  /* background-color: rgb(117, 82, 82); */
-  background-image: url(./images/fon.jpg);
-  
+  background-color: rgb(34,39,46);
+  color: #adbac2;
 }
 
+/* MAIN */
 
 h1 {
   font-family: sans-serif;
   text-align: center;
 
   font-size: 40px;
-  font-weight:bolder;
+  font-weight: bolder;
+  line-height: 60px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .description {
   font-family: sans-serif;
   text-align: center;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
 
   font-size: 25px;
-  font-weight:300;
+  font-weight: 300;
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
 }
+
+/* BARS */
 
 ol {
   list-style: none;
+  padding: 0;
 }
 
 .bars-results {
@@ -32,14 +44,22 @@ ol {
 }
 
 .progress-bars {
-  margin-right: auto;
+  margin-right: 100px;
   margin-left: auto;
 }
 
 .current-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  padding: 22px;
+  margin: 0;
+
   font-family: sans-serif;
   font-size: 25px;
   font-weight: bold;
+  line-height: 1;
 }
 
 .number {
@@ -56,13 +76,16 @@ ol {
   font-weight: bold;
 }
 
-progress {
+input {
+  cursor: pointer;
   height: 30px;
   width: 300px;
   vertical-align: bottom;
+
 }
 
-.strength, .volume {
+.strength,
+.volume {
   display: flex;
 }
 
@@ -71,7 +94,7 @@ progress {
   font-size: 25px;
   font-weight: bold;
   padding-right: 10px;
-  
+
 }
 
 .volume-label {
@@ -79,17 +102,19 @@ progress {
   font-size: 25px;
   font-weight: bold;
 
-  padding-right: 43px;
+  padding-right: 46px;
 }
 
+/* RESULTS */
+
 .results {
-  margin-left: auto;
+  margin-left: 100px;
   margin-right: auto;
 }
 
 .results-title {
   font-family: sans-serif;
-    
+
   font-size: 40px;
   font-weight: bolder;
   text-align: center;
@@ -107,19 +132,28 @@ button {
   width: auto;
   height: 50px;
 
+  display: block;
+  margin: auto;
+
   font-family: sans-serif;
-  
+
   font-size: 25px;
   font-weight: bolder;
   align-items: center;
 
-  background: rgb(237, 158, 102);
+  background: rgb(67, 155, 245);
   border: 0px;
   border-radius: 10px;
 }
 
 button:hover,
 button:focus {
-  background: rgb(239, 91, 12);
-  cursor:pointer;
+  background: rgb(52,125,57);
+  cursor: pointer;
+}
+
+.thumb {
+  padding-top: 70px;
+  display: flex;
+  justify-content: center;
 }
