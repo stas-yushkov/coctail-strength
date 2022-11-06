@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -20,6 +20,73 @@
         JS скрипти наразі вимкнуто в браузері! Будь ласка, увімкніть їх. Або
         замініть браузер на нормальний:)
     </noscript>
+
+    <header class="header">
+      <div class="header-container">
+        <nav class="navigation">
+          <ul class="navigation-list">
+            <li class="navigation-item">
+              <a class="nav-item-link" href="#">
+                Головна
+              </a>
+            </li>
+
+            <li class="navigation-item">
+              <a class="nav-item-link" href="#">
+                Калькулятор
+              </a>
+            </li>
+
+            <li class="navigation-item">
+              <a class="nav-item-link" href="#">
+                Галерея
+              </a>
+            </li>
+
+            <li class="navigation-item">
+              <a class="nav-item-link" href="#">
+                Майстер-класи та дегустації
+              </a>
+            </li>
+
+            <li class="navigation-item">
+              <a class="nav-item-link" href="#">
+                Мапа барів
+              </a>
+            </li>
+
+            <li class="navigation-item">
+              <a class="nav-item-link" href="#">
+                Контакти
+              </a>
+            </li>
+
+            <li class="navigation-item">
+              <a class="nav-item-link link" href="#">
+                FAQ
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-container">
+        <p 
+        class="hero-text">
+        Іноді на вечірці досить важко зупинитись і не переборщити з кількістю шотів, саме тому ми створили додаток алкоШот!
+        Тепер не треба довгих обчислень у вашій голові! Просто оберіть коктейль та (або) його інгредієнти і тицяйте на велику
+        кнопку "розрахувати"
+        </p>
+        <button 
+        type="button" 
+        class="hero-button">
+        до калькулятору
+        </button>
+      </div>
+    </section>
+
     <section class="main">
       <h1>Розрахунок міцності коктейлів (або пийте відповідально)</h1>
       <p class="description">
@@ -33,7 +100,7 @@
 
       <ol>
         <li class="ingredient">
-          <p class="current-number">1</p>
+          <p class="current-number cocktail-name">1</p>
 
           <div class="strength">
             <label 
@@ -43,7 +110,7 @@
 
             <input 
             type="range" 
-            id="strength-progress" 
+
             class="JS-strength-input-1" 
             max="100" 
             value="35" 
@@ -64,13 +131,13 @@
             </label>
             <input
               type="range"
-              id="volume-progress"
+              
               class="JS-volume-input-1"
               max="500"
               value="55"
             />
 
-            <div class="strength-volume">
+            <div class="volume-ml">
               <span class="number">55</span>
               <span class="sign">ml</span>
             </div>
@@ -78,7 +145,7 @@
         </li>
 
         <li class="ingredient">
-          <p class="current-number">2</p>
+          <p class="current-number cocktail-name">2</p>
 
           <div class="strength">
             <label 
@@ -89,7 +156,7 @@
 
             <input 
             type="range" 
-            id="strength-progress" 
+            
             class="JS-strength-input-2" 
             max="100" 
             value="45"
@@ -105,13 +172,13 @@
             <label class="volume-label" for="volume">Об'єм</label>
             <input
               type="range"
-              id="volume"
+              
               class="JS-volume-input-2"
               max="500"
               value="25"
             />
 
-            <div class="strength-volume">
+            <div class="volume-ml">
               <span class="number">25</span>
               <span class="sign">ml</span>
             </div>
@@ -128,14 +195,14 @@
         </li>
 
         <li class="ingredient">
-          <p class="current-number">3</p>
+          <p class="current-number cocktail-name">3</p>
         
           <div class="strength">
             <label class="strength-label" for="strength">Міцність</label>
 
             <input 
             type="range" 
-            id="strength-progress" 
+            
             class="JS-strength-input-3" 
             max="100" 
             value="15"/>
@@ -147,17 +214,17 @@
           </div>
         
           <div class="volume">
-            <label class="volume-label" for="volume1">Об'єм</label>
+            <label class="volume-label" for="volume">Об'єм</label>
 
             <input 
             type="range" 
-            id="volume-progress" 
+            
             class="JS-volume-input-3" 
             max="500" 
             value="30"
             />
 
-            <div class="strength-volume">
+            <div class="volume-ml">
               <span class="number">30</span>
               <span class="sign">ml</span>
             </div>
@@ -165,7 +232,7 @@
         </li>
 
         <li class="ingredient">
-          <p class="current-number">4</p>
+          <p class="current-number cocktail-name">4</p>
         
       <div class="strength">
         <label 
@@ -176,8 +243,8 @@
 
         <input 
         type="range" 
-        id="strength-progress" 
-        class="JS-strength-input-3" 
+        
+        class="JS-strength-input-4" 
         max="100" 
         value="10"
         />
@@ -197,13 +264,13 @@
 
         <input 
         type="range" 
-        id="volume-progress" 
-        class="JS-volume-input-3" 
+        
+        class="JS-volume-input-4" 
         max="500" 
         value="50"
         />
       
-        <div class="strength-volume">
+        <div class="volume-ml">
           <span class="number">50</span>
           <span class="sign">ml</span>
         </div>
