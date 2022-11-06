@@ -1,27 +1,159 @@
 body {
-  background-color: rgb(56, 64, 64);
+  background-color: rgb(34,39,46);
+  color: #adbac2;
+  font-family: Roboto, sans-serif;
+  font-weight: normal;
+  font-size: 25px;
 }
+
+/* MAIN */
+
+h1 {
+  /* font-family: Roboto, sans-serif; */
+  text-align: center;
+
+  font-size: 40px;
+  font-weight: bolder;
+  line-height: 60px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.description {
+  /* font-family: sans-serif; */
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+
+  font-size: 25px;
+  font-weight: 300;
+
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+/* BARS */
 
 ol {
   list-style: none;
+  padding: 0;
 }
 
-.strength1-label {
+.bars-results {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.progress-bars {
+  margin-right: 100px;
+  margin-left: auto;
+}
+
+.current-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  padding: 22px;
+  margin: 0;
+
+  /* font-family: sans-serif; */
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.number {
+  /* font-family: sans-serif; */
+  font-size: 25px;
+  font-weight: bold;
+
+  padding-left: 10px;
+}
+
+.sign {
+  /* font-family: sans-serif; */
+  font-size: 25px;
+  font-weight: bold;
+}
+
+input {
+  cursor: pointer;
+  height: 30px;
+  width: 300px;
+  vertical-align: bottom;
+
+}
+
+.strength,
+.volume {
+  display: flex;
+}
+
+.strength-label {
+  /* font-family: sans-serif; */
+  font-size: 25px;
+  font-weight: bold;
   padding-right: 10px;
-  font-size: 25px;
+
 }
 
-.volume1-label {
-  padding-right: 43px;
+.volume-label {
+  /* font-family: sans-serif; */
   font-size: 25px;
+  font-weight: bold;
+
+  padding-right: 46px;
 }
 
-.strength2-label {
-  padding-right: 10px;
-  font-size: 25px;
+/* RESULTS */
+
+.results {
+  margin-left: 100px;
+  margin-right: auto;
 }
 
-.volume2-label {
-  padding-right: 43px;
+.results-title {
+  /* font-family: sans-serif; */
+
+  font-size: 40px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.results-desc {
+
   font-size: 25px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+button {
+  width: auto;
+  height: 50px;
+
+  display: block;
+  margin: auto;
+
+  font-size: 25px;
+  font-weight: bolder;
+  align-items: center;
+
+  background: rgb(67, 155, 245);
+  border: 0px;
+  border-radius: 10px;
+}
+
+button:hover,
+button:focus {
+  background: rgb(52,125,57);
+  cursor: pointer;
+}
+
+.thumb {
+  padding-top: 70px;
+  display: flex;
+  justify-content: center;
 }

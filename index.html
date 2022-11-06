@@ -4,71 +4,115 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>алкоШот</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.css"
+      integrity="sha512-Y0MM+V6ymRKN2zStTqzQ227DWhhp4Mzdo6gnlRnuaNCbc+YN/ZH0sBCLTM4M0oSy9c9VKiCvd4Jk44aCLrNS5Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <noscript>
-      <p>
-        JS скрипти наразі вимкнуто в браузері! Будь ласка, увімкніть їх. Або
-        замініть браузер на нормальний:)
-      </p>
+      JS скрипти наразі вимкнуто в браузері! Будь ласка, увімкніть їх. Або
+      замініть браузер на нормальний:)
     </noscript>
-    <section class="progressBars">
+    <section class="main">
       <h1>Розрахунок міцності коктейлів (або пийте відповідально)</h1>
-      <ol>
-        <li class="first">
-          <div class="number1">1</div>
+      <p class="description">
+        Іноді на вечірці досить важко зупинитись і не переборщити з кількістю
+        шотів, саме тому ми створили додаток алкоШот! Тепер не треба довгих
+        обчислень у вашій голові! Просто оберіть коктейль та (або) його
+        інгредієнти і тицяйте на велику кнопку "розрахувати".
+      </p>
+      <div class="bars-results">
+        <div class="progress-bars">
+          <ol>
+            <li class="ingredient">
+              <p class="current-number">1</p>
+              <div class="strength">
+                <label class="strength-label">Міцність</label>
+                <input
+                  type="range"
+                  id="strength-progress"
+                  class="JS-strength-input"
+                  max="100"
+                  value="40"
+                />
+                <div class="strength-percent">
+                  <span class="number JS-strength-result">40</span>
+                  <span class="sign">%</span>
+                </div>
+              </div>
 
-          <div class="volume1">
-            <label class="volume1-label" for="volume1">Об'єм</label>
-            <input type="range" class="JS-volume-input" max="100" value="90" />
-            <span class="volume1-percent JS-volume-result">90мл</span>
+              <div class="volume">
+                <label class="volume-label" for="volume"> Об'єм </label>
+                <input
+                  type="range"
+                  id="volume-progress"
+                  class="JS-volume-input"
+                  max="500"
+                  value="90"
+                />
+                <div class="volume-percent">
+                  <span class="number JS-volume-result">90</span>
+                  <span class="sign">мл</span>
+                </div>
+              </div>
+            </li>
+
+            <li class="ingredient">
+              <p class="current-number">2</p>
+              <div class="strength">
+                <label class="strength-label">Міцність</label>
+                <input
+                  type="range"
+                  class="JS-strength-input"
+                  max="100"
+                  value="15"
+                />
+                <div class="strength-percent">
+                  <span class="number JS-strength-result">15</span>
+                  <span class="sign">%</span>
+                </div>
+              </div>
+
+              <div class="volume">
+                <label class="volume-label">Об'єм</label>
+                <input
+                  type="range"
+                  class="JS-volume-input"
+                  max="500"
+                  value="30"
+                />
+                <div class="volume-percent">
+                  <span class="number JS-volume-result">30</span>
+                  <span class="sign">мл</span>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="results">
+          <div class="thumb">
+            <img src="./images/алкоШот.png" alt="алкаШот" width="150" />
           </div>
-
-          <div class="strength1">
-            <label class="strength1-label" for="strength1">Міцність</label>
-            <input
-              type="range"
-              class="JS-strength-input"
-              max="100"
-              value="40"
-            />
-            <span class="strength1-percent JS-strength-result">40%</span>
-          </div>
-        </li>
-
-        <li class="second">
-          <div class="number2">2</div>
-
-          <div class="volume2">
-            <label class="volume2-label" for="volume2">Об'єм</label>
-            <input type="range" class="JS-volume-input" max="100" value="30" />
-            <span class="volume2-percent JS-volume-result">30мл</span>
-          </div>
-
-          <div class="strength2">
-            <label class="strength2-label" for="strength2">Міцність</label>
-            <input
-              type="range"
-              class="JS-strength-input"
-              max="100"
-              value="15"
-            />
-            <span class="strength2-percent JS-strength-result">15%</span>
-          </div>
-        </li>
-      </ol>
-    </section>
-    <section class="results">
-      <img
-        src="https://images.pexels.com/photos/67112/pexels-photo-67112.jpeg"
-        alt="Macbook Air на сірому дерев'яному столі"
-        width="100"
-      />
-      <p>Міцність коктейлю:</p>
-      <p class="JS-result">... (тицяй велику кнопку нижче) ...</p>
-      <button class="button JS-result-button">РОЗРАХУВАТИ</button>
+          <p class="results-title">Міцність коктейлю:</p>
+          <p class="results-desc JS-result">
+            ... (тицяй велику кнопку нижче) ...
+          </p>
+          <button class="button JS-result-button">РОЗРАХУВАТИ</button>
+        </div>
+      </div>
     </section>
     <script src="./index.js"></script>
   </body>
