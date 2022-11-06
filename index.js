@@ -1,6 +1,6 @@
 const coctailsArr = [
-  { name: 'віскі', weight: 90, strength: 40 },
-  { name: 'вермут', weight: 30, strength: 16 },
+  // { name: 'віскі', weight: 90, strength: 40 },
+  // { name: 'вермут', weight: 30, strength: 16 },// result 34%
 ];
 
 const strengthInputList = document.querySelectorAll('input.JS-strength-input');
@@ -14,7 +14,7 @@ const resultButton = document.querySelector('button.JS-result-button');
 const recalc = () => {
   const initialWeight = 0;
   const alcoholWeight = coctailsArr.reduce(
-    (prev, curr, currIdx) => (prev + curr.weight * coctailsArr[currIdx].strength)
+    (prev, curr, currIdx) => (prev + curr.weight * (coctailsArr[currIdx].strength / 100))
     , initialWeight
   );
 
@@ -23,7 +23,7 @@ const recalc = () => {
     , initialWeight
   );
 
-  const strength = Math.floor(alcoholWeight / weight * 10) / 10;
+  const strength = Math.round((alcoholWeight / weight) * 1000) / 10;
 
   if (!strength) {
     resultText.textContent = '... схоже, тут безалкогольний коктейль ...';
@@ -37,8 +37,8 @@ const recalc = () => {
 }
 
 strengthLabelList.forEach((_, idx) => {
-  strengthLabelList[idx].textContent = `${strengthInputList[idx].value}%`;
-  volumeLabelList[idx].textContent = `${volumeInputList[idx].value}мл`;
+  strengthLabelList[idx].textContent = strengthInputList[idx].value;
+  volumeLabelList[idx].textContent = volumeInputList[idx].value;
   if (!coctailsArr[idx]) {
     coctailsArr.push({
       strength: Number(strengthInputList[idx].value),
@@ -54,7 +54,7 @@ strengthLabelList.forEach((_, idx) => {
 
 strengthInputList.forEach((item, idx) => {
   item.addEventListener('input', (e) => {
-    strengthLabelList[idx].textContent = `${Number(e.target.value)}%`;
+    strengthLabelList[idx].textContent = Number(e.target.value);
     coctailsArr[idx].strength = Number(e.target.value);
     console.table(coctailsArr);
   });
@@ -62,11 +62,9 @@ strengthInputList.forEach((item, idx) => {
 
 volumeInputList.forEach((item, idx) => {
   item.addEventListener('input', (e) => {
-    volumeLabelList[idx].textContent = `${Number(e.target.value)}мл`;
+    volumeLabelList[idx].textContent = Number(e.target.value);
     coctailsArr[idx].weight = Number(e.target.value);
   });
 })
 
-resultButton.addEventListener('click', (e) => {
-  recalc();
-});
+resultButton.addEventListener('click', () => recalc());
