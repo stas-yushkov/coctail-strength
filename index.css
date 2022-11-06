@@ -14,11 +14,72 @@ body {
   
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #adbac2;
+}
+
+/* HEADER */
+
+.header-container {
+  padding: 30px 40px;
+  margin: 0 auto;
+}
+
+.navigation-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-item-link {
+  line-height: 1;
+  letter-spacing: 0.03em;
+  
+  font-size: 20px;
+}
+
+.nav-item-link:hover,
+.nav-item-link:focus {
+  color: rgb(67, 155, 245);
+}
+
+/* HERO */
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.hero {
+  padding: 250px 40px 70px 40px;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(/images/hero\ bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: end;
+}
+
+.hero-text {
+  text-align: center;
+}
+
 h1 {
   /* font-family: Roboto, sans-serif; */
   text-align: center;
   
-
   font-size: 40px;
   font-weight: bolder;
   line-height: 1.5;
