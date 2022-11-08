@@ -28,6 +28,12 @@ ul {
   margin: 0;
 }
 
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 a {
   text-decoration: none;
   color: #adbac2;
@@ -170,19 +176,13 @@ h1 {
 
 /* BARS */
 
-ol {
-  list-style: none;
-  padding: 0 10px;
-  margin: 0;
-}
-
-@media screen and (min-width: 767px) and (max-width: 1600px) {
+@media screen and (min-width: 767px) {
   .bars-results {
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
     margin: 0;
-    padding: 30px 50px;
+    padding: 0 50px;
   }
 }
 
@@ -190,10 +190,19 @@ ol {
   .bars-results {
   display: block;
   margin: 0;
-  padding: 10px 0px;
+  padding: 0px;
   }
 }
 
+.progress-bars {
+  padding-bottom: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .progress-bars {
+    padding-bottom: 20px;
+  }
+}
 
 .current-number {
   display: flex;
@@ -250,7 +259,7 @@ ol {
 input {
   cursor: pointer;
   height: 30px;
-  width: 180px;
+  /* width: 180px; */
   vertical-align: bottom;
 
 }
@@ -260,7 +269,7 @@ input {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -277,6 +286,12 @@ input {
     font-size: 20px;
     font-weight: bold;
   }
+}
+
+.strength-percent, 
+.volume-ml {
+  display: flex;
+  align-items: center;
 }
 
 .volume-label {
@@ -297,9 +312,7 @@ input {
 /* RESULTS */
 
 .results {
-  /* margin-left: 100px;
-  margin-right: auto; */
-  padding: 0 10px;
+  padding-bottom: 15px;
 }
 
 .results-title {
@@ -308,6 +321,16 @@ input {
   font-size: 40px;
   font-weight: bolder;
   text-align: center;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .results-title {
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 15px;
+  }
 }
 
 .results-desc {
@@ -315,6 +338,16 @@ input {
   font-size: 25px;
   font-weight: bolder;
   text-align: center;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .results-desc {
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 15px;
+  }
 }
 
 button {
@@ -322,7 +355,7 @@ button {
   height: 50px;
 
   display: block;
-  margin: auto;
+  margin: 0 auto;
 
   font-size: 25px;
   font-weight: bolder;
@@ -331,6 +364,7 @@ button {
   background: rgb(67, 155, 245);
   border: 0px;
   border-radius: 10px;
+  
 }
 
 button:hover,
@@ -340,7 +374,17 @@ button:focus {
 }
 
 .thumb {
-  padding-top: 70px;
   display: flex;
   justify-content: center;
+
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  ..thumb {
+  display: flex;
+  justify-content: center;
+  
+  margin-bottom: 20px;
+  }
 }
