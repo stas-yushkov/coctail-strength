@@ -35,7 +35,7 @@ a {
 }
 
 body {
-  background-color: rgb(34,39,46);
+  background-color: rgb(34, 39, 46);
   color: #adbac2;
   font-family: Roboto, sans-serif;
   font-weight: normal;
@@ -85,7 +85,7 @@ body {
 .nav-item-link {
   line-height: 1;
   letter-spacing: 0.03em;
-  
+
   font-size: 20px;
 }
 
@@ -106,8 +106,11 @@ body {
 
 .hero {
   padding: 250px 40px 70px 40px;
-  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    url(/images/hero\ bg.jpg);
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(./images/hero-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -254,7 +257,6 @@ input {
   cursor: pointer;
   height: 30px;
   vertical-align: bottom;
-
 }
 
 .strength,
@@ -327,7 +329,6 @@ input {
 }
 
 .results-desc {
-
   font-size: 25px;
   font-weight: bolder;
   text-align: center;
@@ -362,7 +363,7 @@ button {
 
 button:hover,
 button:focus {
-  background: rgb(52,125,57);
+  background: rgb(52, 125, 57);
   cursor: pointer;
 }
 
