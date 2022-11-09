@@ -13,27 +13,28 @@ const resultButton = document.querySelector('button.JS-result-button');
 
 const recalc = () => {
   const initialWeight = 0;
+
   const alcoholWeight = coctailsArr.reduce(
     (prev, curr, currIdx) => (prev + curr.weight * (coctailsArr[currIdx].strength / 100))
     , initialWeight
   );
 
-  const weight = coctailsArr.reduce(
+  const coctailWeight = coctailsArr.reduce(
     (prev, curr) => (prev + curr.weight)
     , initialWeight
   );
 
-  const strength = Math.round((alcoholWeight / weight) * 1000) / 10;
+  const coctailStrength = Math.round((alcoholWeight / coctailWeight) * 1000) / 10;
 
-  if (!strength) {
-    resultText.textContent = '... схоже, тут безалкогольний коктейль ...';
-    return;
+  if (!coctailStrength) {
+    return resultText.textContent = '... схоже, тут безалкогольний коктейль ...';
   }
-  if (strength >= 90) {
-    resultText.textContent = `${strength}% ... розірве в друзки ...`;
-    return;
+
+  if (coctailStrength >= 90) {
+    return resultText.textContent = `${coctailStrength}% ... розірве в друзки ...`;
   }
-  resultText.textContent = `${strength}%`;
+
+  return resultText.textContent = `${coctailStrength}%`;
 }
 
 strengthLabelList.forEach((_, idx) => {
@@ -52,19 +53,20 @@ strengthLabelList.forEach((_, idx) => {
   }
 })
 
-strengthInputList.forEach((item, idx) => {
-  item.addEventListener('input', (e) => {
-    strengthLabelList[idx].textContent = Number(e.target.value);
-    coctailsArr[idx].strength = Number(e.target.value);
-    console.table(coctailsArr);
-  });
+document.addEventListener('input', e => {
+  strengthInputList.forEach((item, idx) => {
+    if (item === e.target) {
+      strengthLabelList[idx].textContent = Number(e.target.value);
+      coctailsArr[idx].strength = Number(e.target.value);
+    }
+  })
+
+  volumeInputList.forEach((item, idx) => {
+    if (item === e.target) {
+      volumeLabelList[idx].textContent = Number(e.target.value);
+      coctailsArr[idx].weight = Number(e.target.value);
+    }
+  })
 })
 
-volumeInputList.forEach((item, idx) => {
-  item.addEventListener('input', (e) => {
-    volumeLabelList[idx].textContent = Number(e.target.value);
-    coctailsArr[idx].weight = Number(e.target.value);
-  });
-})
-
-resultButton.addEventListener('click', () => recalc());
+resultButton.addEventListener('click', recalc);
