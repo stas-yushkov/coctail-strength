@@ -115,7 +115,7 @@ ol {
 }
 
 .bars-results {
-  display: flex;
+  /* display: flex; */
   align-items: flex-start;
   justify-content: space-around;
   margin: 0;
@@ -231,7 +231,26 @@ button:focus {
 }
 
 .thumb {
-  padding-top: 70px;
   display: flex;
   justify-content: center;
+}
+
+.coctail-vis {
+  height: 129px;
+  width: 85px;
+  margin: 0 auto;
+  background-color: #adbac2;
+}
+
+.ingridient-vis {
+  height: 25%;
+  background-color: #4fb1ee;
+  border-bottom: 2px solid #469dd3;
+}
+.ingridient-vis:last-child {
+  border-bottom: none;
+}
+
+.display-none {
+  display: none;
 }
