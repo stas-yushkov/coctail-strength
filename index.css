@@ -1,5 +1,11 @@
 :root {
   --accent-color: rgb(67, 155, 245);
+  --current-color: #adbac2;
+
+  --header-bg-color: rgba(45, 51, 59, 0.3);
+
+  --button-bg-color: rgb(67, 155, 245);
+  --button-bg-accent-color: rgb(30, 28, 160);
 }
 
 p,
@@ -34,13 +40,13 @@ img {
 
 a {
   text-decoration: none;
-  color: #adbac2;
+  color: var(--current-color);
   outline: none;
 }
 
 body {
   background-color: rgb(34, 39, 46);
-  color: #adbac2;
+  color: var(--current-color);
   font-family: Roboto, sans-serif;
   font-weight: normal;
   font-size: 25px;
@@ -81,7 +87,7 @@ body {
   width: 100%;
   position: absolute;
   padding: 0 10px;
-  background-color: rgba(45, 51, 59, 0.3);
+  background-color: var(--header-bg-color);
   
 }
 
@@ -163,6 +169,29 @@ body {
   margin-bottom: 15px;
 }
 
+.hero-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-button {
+  cursor: pointer;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 1023px) {
+  .hero-button {
+  font-size: 20px;
+  }
+}
+
+.hero-button:hover,
+.hero-button:focus {
+  color: var(--accent-color);
+}
+
 h1 {
   text-align: center;
   font-size: 40px;
@@ -202,27 +231,21 @@ h1 {
 
 /* BARS */
 
-/* @media screen and (max-width: 1023px) { */
   .bars-results {
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 0 50px 30px;
   }
-/* } */
 
 @media screen and (max-width: 1023px) {
   .bars-results {
   display: block;
   margin: 0;
   padding: 0 0 15px 0;
-  /* padding-bottom: 15px; */
   }
 }
 
-/* .progress-bars {
-  padding-bottom: 30px;
-} */
 
 @media screen and (max-width: 1023px) {
   .progress-bars {
@@ -328,26 +351,7 @@ input {
   align-items: center;
 }
 
-/* TODO: */
-/* .volume-label {
-  /* font-family: sans-serif; */
-  /* font-size: 25px;
-  font-weight: bold;
-  padding-right: 46px;
-} */ 
-
-/* @media screen and (max-width: 1023px) {
-  .volume-label {
-    font-size: 20px;
-    font-weight: bold;
-  }
-} */
-
 /* RESULTS */
-
-/* .results {
-  padding-bottom: 15px;
-} */
 
 .results-title {
   font-size: 40px;
@@ -406,7 +410,7 @@ button {
   font-weight: bolder;
   align-items: center;
 
-  background: rgb(67, 155, 245);
+  background: var(--button-bg-color);
   border: 0px;
   border-radius: 10px;
   
@@ -414,7 +418,7 @@ button {
 
 button:hover,
 button:focus {
-  background: rgb(30, 28, 160);
+  background: var(--button-bg-accent-color);
   cursor: pointer;
 }
 
