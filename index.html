@@ -28,7 +28,7 @@
 
     <header class="header">
       <div class="header-container">
-        <p class="burger-menu">burger</p>
+        
         <nav class="navigation">
           <ul class="navigation-list">
             <li class="navigation-item">
@@ -63,6 +63,62 @@
           </ul>
         </nav>
       </div>
+
+    <div class="menu-button__container">
+      <button type="button" class="menu-toggle-open js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="menu-toggle_icon" width="40" height="40">
+          <use href="./images/icons.svg#icon-mob-menu1"></use>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <div class="container">
+        <button type="button" class="menu-toggle-close js-close-menu">
+          <svg class="menu-toggle_icon" width="40" height="40">
+            <use href="./images/icons.svg#icon-close-big1"></use>
+          </svg>
+        </button>
+    
+        <ul class="mobile-menu__list list">
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link link linkcurrent" href="#">
+              Головна
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link link" href="#">
+              Калькулятор
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link link" href="#">
+              Галерея
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link link" href="#">
+              Майстер-класи та дегустації
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link link" href="#">
+              Мапа барів
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link link" href="#">
+              Контакти
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link link" href="#">
+              FAQ
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
     </header>
 
     <section class="hero">
@@ -247,6 +303,7 @@
         </div>
       </div>
     </section>
-    <script src="./index.js"></script>
+    <script src="./js/index.js"></script>
+    <script defer src="js/mobile-menu.js"></script>
   </body>
 </html>
