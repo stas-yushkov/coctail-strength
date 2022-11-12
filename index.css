@@ -2,10 +2,15 @@
   --accent-color: rgb(67, 155, 245);
   --current-color: #adbac2;
 
+  --body-bg-color: rgb(34, 39, 46);
+
   --header-bg-color: rgba(45, 51, 59, 0.3);
 
+  --hero-bg-img-color: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
+
   --button-bg-color: rgb(67, 155, 245);
-  --button-bg-accent-color: rgb(30, 28, 160);
+  --button-bg-accent-color: rgb(0, 117, 255);
+  --button-text-color: #000000;
 }
 
 p,
@@ -45,10 +50,10 @@ a {
 }
 
 body {
-  background-color: rgb(34, 39, 46);
+  background-color: var(--body-bg-color);
   color: var(--current-color);
   font-family: Roboto, sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 25px;
 }
 
@@ -136,7 +141,7 @@ body {
 
 @media screen and (max-width: 1023px) {
   .hero-text {
-    font-weight: normal;
+    font-weight: 400;
     font-size: 16px;
   }
 }
@@ -144,10 +149,7 @@ body {
 
 .hero {
   padding: 250px 40px 70px 40px;
-  background-image: linear-gradient(
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
+  background-image: var(--hero-bg-img-color),
     url(./images/hero-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -166,36 +168,41 @@ body {
 
 .hero-text {
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .hero-button-container {
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
 .hero-button {
   cursor: pointer;
   font-size: 30px;
+  font-weight: 700;
+  color: var(--button-text-color);
+  text-align: center;
   text-transform: uppercase;
+  background-color: var(--button-bg-color);
+  padding: 5px;
+  border-radius: 25px;
 }
 
 @media screen and (max-width: 1023px) {
   .hero-button {
-  font-size: 20px;
+  font-size: 25px;
   }
 }
 
 .hero-button:hover,
 .hero-button:focus {
-  color: var(--accent-color);
+  background-color: var(--button-bg-accent-color);
 }
 
 h1 {
   text-align: center;
   font-size: 40px;
-  font-weight: bolder;
+  font-weight: 900;
   line-height: 1.5;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -214,7 +221,7 @@ h1 {
   letter-spacing: 0.03em;
 
   font-size: 25px;
-  font-weight: 300;
+  font-weight: 400;
 
   margin-left: auto;
   margin-right: auto;
@@ -262,7 +269,7 @@ h1 {
   margin: 0;
 
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1;
 }
 
@@ -272,14 +279,14 @@ h1 {
     align-items: center;
     justify-content: center;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
   }
 }
 
 .number {
 
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 700;
 
   padding-left: 10px;
   width: 53px;
@@ -289,14 +296,14 @@ h1 {
 @media screen and (max-width: 1023px) {
   .number {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
     width: 45px;
   }
 }
 
 .sign {
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 700;
   margin-left: 5px;
   text-align: left;
   width: 32px;
@@ -305,7 +312,7 @@ h1 {
 @media screen and (max-width: 1023px) {
   .sign {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
     width: 27px;
   }
 }
@@ -330,7 +337,7 @@ input {
 .volume-label {
   display: flex;
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 700;
   padding-right: 10px;
   flex-basis: 120px;
   flex-shrink: 0;
@@ -340,7 +347,7 @@ input {
   .strength-label,
   .volume-label {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
     flex-basis: 94px;
   }
 }
@@ -355,7 +362,7 @@ input {
 
 .results-title {
   font-size: 40px;
-  font-weight: bolder;
+  font-weight: 700;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -363,7 +370,7 @@ input {
 @media screen and (max-width: 1023px) {
   .results-title {
     font-size: 25px;
-    font-weight: bolder;
+    font-weight: 700;
     text-align: center;
     margin-bottom: 15px;
   }
@@ -371,7 +378,7 @@ input {
 
 .results-desc {
   font-size: 25px;
-  font-weight: bolder;
+  font-weight: 700;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -379,7 +386,7 @@ input {
 @media screen and (max-width: 1023px) {
   .results-desc {
     font-size: 18px;
-    font-weight: bolder;
+    font-weight: 700;
     text-align: center;
     margin-bottom: 15px;
   }
@@ -406,8 +413,9 @@ button {
   display: block;
   margin: 0 auto;
 
+  color: var(--button-text-color);
   font-size: 25px;
-  font-weight: bolder;
+  font-weight: 700;
   align-items: center;
 
   background: var(--button-bg-color);
