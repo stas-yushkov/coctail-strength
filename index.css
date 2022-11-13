@@ -6,11 +6,9 @@
 
   --body-bg-color: rgb(34, 39, 46);
 
-  --calc-bg-color: linear-gradient(rgb(7, 26, 240), rgb(169, 176, 21));
-
   --header-bg-color: rgba(45, 51, 59, 0.3);
 
-  --hero-bg-img-color: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
+  --hero-bg-gradient: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
 
   --button-bg-color: rgb(67, 155, 245);
   --button-bg-accent-color: rgb(0, 117, 255);
@@ -91,7 +89,6 @@ body {
 }
 
 .header-container {
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,7 +97,6 @@ body {
   position: absolute;
   padding: 0 10px;
   background-color: var(--header-bg-color);
-  
 }
 
 @media screen and (max-width: 1023px) {
@@ -175,10 +171,12 @@ body {
 
 .menu-button__container {
   display: flex;
-  justify-content: start;
-  margin-left: auto;
+  justify-content: space-between;
+  align-items: center;
+  
   padding-top: 10px;
   padding-bottom: 10px;
+
   position: absolute;
 }
 
@@ -186,6 +184,11 @@ body {
   .menu-button__container {
     display: none;
   }
+}
+
+.menu-button__container-logo {
+  font-weight: 700;
+  text-align: center;
 }
 
 .menu-toggle-open {
@@ -263,7 +266,7 @@ body {
 
 .hero {
   padding: 250px 40px 70px 40px;
-  background-image: var(--hero-bg-img-color),
+  background-image: var(--hero-bg-gradient),
     url(./images/hero-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
