@@ -170,9 +170,7 @@ body {
 }
 
 .menu-button__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: block;
   
   padding-top: 10px;
   padding-bottom: 10px;
@@ -186,10 +184,6 @@ body {
   }
 }
 
-.menu-button__container-logo {
-  font-weight: 700;
-  text-align: center;
-}
 
 .menu-toggle-open {
   height: 40px;
@@ -266,6 +260,7 @@ body {
 
 .hero {
   padding: 250px 40px 70px 40px;
+  background-image: var(--body-bg-color);
   background-image: var(--hero-bg-gradient),
     url(./images/hero-bg.jpg);
   background-repeat: no-repeat;
@@ -294,6 +289,7 @@ body {
 }
 
 .hero-button {
+  display: flex;
   cursor: pointer;
   font-size: 30px;
   font-weight: 700;
@@ -302,8 +298,11 @@ body {
   text-transform: uppercase;
   background-color: var(--button-bg-color);
   padding: 5px;
-  border-radius: 25px;
-  
+  border-radius: 10px;
+  height: 50px;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 1023px) {
