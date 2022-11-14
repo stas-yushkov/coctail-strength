@@ -420,7 +420,6 @@ button {
   background: var(--button-bg-color);
   border: 0px;
   border-radius: 10px;
-  
 }
 
 button:hover,
