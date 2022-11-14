@@ -84,7 +84,6 @@ body {
 }
 
 .header-container {
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,7 +92,6 @@ body {
   position: absolute;
   padding: 0 10px;
   background-color: var(--header-bg-color);
-  
 }
 
 @media screen and (max-width: 1023px) {
