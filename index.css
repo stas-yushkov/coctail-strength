@@ -21,6 +21,10 @@
     rgb(60, 41, 84) 66%
   );
 
+  --logo-text-shadow: 5px 5px 15px rgb(10, 30, 182),
+    5px -5px 15px rgb(126, 6, 200), -5px 5px 15px rgb(126, 6, 200),
+    -5px -5px 15px rgb(126, 6, 200), 0px 0px 15px rgb(126, 6, 200);
+
   --button-bg-color: rgba(99, 87, 156, 0.6);
   --button-bg-focus-color: rgba(24, 29, 83, 0.6);
   --button-text-color: #c0c0c0;
@@ -136,9 +140,7 @@ body {
   font-size: 30px;
   font-weight: 700;
   color: var(--current-color);
-  text-shadow: 5px 5px 15px rgb(10, 30, 182), 5px -5px 15px rgb(126, 6, 200),
-    -5px 5px 15px rgb(126, 6, 200), -5px -5px 15px rgb(126, 6, 200),
-    0px 0px 15px rgb(126, 6, 200);
+  text-shadow: var(--logo-text-shadow);
   padding: 0;
   margin: 0;
 }
@@ -210,7 +212,7 @@ body {
   }
 }
 
-.qwe-container {
+.menu-inner-container {
   position: relative;
   display: flex;
   flex-direction: column;
