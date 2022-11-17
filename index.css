@@ -89,6 +89,54 @@ body {
 .main {
   padding: 0 40px;
   margin: 0 auto;
+  background-image: var(--main-background-gradient);
+}
+
+@media screen and (max-width: 1023px) {
+  .main {
+    padding: 0 10px;
+  }
+}
+
+.main-container {
+}
+
+/* HEADER */
+
+.header {
+  width: 100%;
+  position: absolute;
+  background-color: var(--header-bg-color);
+}
+
+.navigation-list {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 40px;
+}
+
+@media screen and (max-width: 1023px) {
+  .header-container {
+    height: 50px;
+    padding: 0 15px;
+  }
+}
+
+.logo-wrapper {
+  margin-right: 15px;
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1023px) {
+  .logo-wrapper {
+    min-height: 50px;
+  }
 }
 
 .logo {
@@ -110,17 +158,17 @@ body {
   }
 }
 
-.navigation-list {
+.menu-inner-container {
+  position: relative;
   display: flex;
-
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
   width: 100%;
 }
 
-.nav-item-link {
-  line-height: 1;
-  letter-spacing: 0.03em;
+.menu-container.is-open {
+  transform: translateX(0);
+}
 
   font-size: 20px;
   white-space: nowrap;
@@ -130,8 +178,60 @@ body {
   align-items: center;
 }
 
-.nav-item-link:hover,
-.nav-item-link:focus {
+@media screen and (max-width: 1023px) {
+  .menu-button__container {
+    display: block;
+  }
+}
+
+.menu-toggle-open {
+  height: 40px;
+  min-width: 40px;
+  padding: 0;
+  background-color: transparent;
+  transition: fill var(--time) var(--function-cubic);
+}
+
+.menu-toggle-open:hover,
+.menu-toggle-open:focus,
+.menu-toggle-close:hover,
+.menu-toggle-close:focus {
+  fill: var(--accent-color);
+}
+
+.menu-toggle_icon {
+  fill: var(--current-color);
+}
+
+.menu-toggle-close {
+  display: flex;
+  padding: 0;
+  position: absolute;
+  top: -38px;
+  right: -25px;
+  transition: fill var(--time) var(--function-cubic);
+  background-color: transparent;
+}
+
+.mobile-menu__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mobile-menu__link {
+  display: block;
+  position: relative;
+
+  color: var(--nav-link-color);
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+
+  transition: color var(--time) var(--function-cubic);
+}
+
+.mobile-menu__link:hover,
+.mobile-menu__link:focus {
   color: var(--accent-color);
   transition: color var(--time) var(--function-cubic);
 }
@@ -257,11 +357,10 @@ body {
 
 .hero {
   padding: 250px 40px 70px 40px;
-  background-image: linear-gradient(
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
-    url(/images/hero\ bg.jpg);
+
+  background-color: var(--body-bg-color);
+  background-image: var(--hero-bg-gradient), url(./images/hero-bg.jpg);
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -531,7 +630,7 @@ button {
 
 button:hover,
 button:focus {
-  background: rgb(52, 125, 57);
+  background: var(--button-bg-focus-color);
   cursor: pointer;
 }
 
