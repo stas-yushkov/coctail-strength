@@ -101,10 +101,21 @@ body {
 
 @media screen and (max-width: 1023px) {
   .header-container {
-    justify-content: flex-end;
-    height: 50px;
-
+  display: flex;
+  justify-content: flex-start;
+  height: 45px;
+  background-color: transparent;
+  align-content: flex-start;
+  align-items: flex-end;
   }
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--current-color);
+  text-shadow: 10px 10px 30px rgb(10, 30, 182), -10px -10px 30px rgb(126, 6, 200);
+  -webkit-text-stroke: 2px rgb(131, 89, 197);
 }
 
 .navigation-list {
@@ -170,12 +181,12 @@ body {
 }
 
 .menu-button__container {
-  display: block;
+  /* display: block;
   
   padding-top: 10px;
   padding-bottom: 10px;
 
-  position: absolute;
+  position: absolute; */
 }
 
 @media screen and (min-width: 768px) {
@@ -191,6 +202,9 @@ body {
   padding: 0;
   background-color: transparent;
   transition: fill var(--time) var(--function-cubic);
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
 @media (min-width: 768px) {
