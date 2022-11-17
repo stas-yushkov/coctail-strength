@@ -70,6 +70,8 @@ a {
 }
 
 body {
+  background-color: rgb(34, 39, 46);
+  color: #adbac2;
   background-color: var(--body-bg-color);
   color: var(--current-color);
   font-family: Roboto, sans-serif;
@@ -87,53 +89,6 @@ body {
 .main {
   padding: 0 40px;
   margin: 0 auto;
-  background-image: var(--main-background-gradient);
-}
-
-@media screen and (max-width: 1023px) {
-  .main {
-    padding: 0 10px;
-  }
-}
-
-.main-container {
-}
-
-/* HEADER */
-
-.header {
-  width: 100%;
-  position: absolute;
-  background-color: var(--header-bg-color);
-}
-
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-  padding: 0 40px;
-}
-
-@media screen and (max-width: 1023px) {
-  .header-container {
-    height: 50px;
-    padding: 0 15px;
-  }
-}
-
-.logo-wrapper {
-  margin-right: 15px;
-  min-height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@media screen and (max-width: 1023px) {
-  .logo-wrapper {
-    min-height: 50px;
-  }
 }
 
 .logo {
@@ -302,10 +257,11 @@ body {
 
 .hero {
   padding: 250px 40px 70px 40px;
-
-  background-color: var(--body-bg-color);
-  background-image: var(--hero-bg-gradient), url(./images/hero-bg.jpg);
-
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(/images/hero\ bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -358,6 +314,7 @@ body {
 
 h1 {
   text-align: center;
+
   font-size: 40px;
   font-weight: 900;
   line-height: 1.5;
@@ -574,7 +531,7 @@ button {
 
 button:hover,
 button:focus {
-  background: var(--button-bg-focus-color);
+  background: rgb(52, 125, 57);
   cursor: pointer;
 }
 
