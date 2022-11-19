@@ -249,7 +249,7 @@ body {
 .menu-toggle-open:focus,
 .menu-toggle-close:hover,
 .menu-toggle-close:focus {
-  fill: var(--accent-color);
+  background-color: var(--button-bg-color);
 }
 
 .menu-toggle_icon {
@@ -264,6 +264,7 @@ body {
   right: -25px;
   transition: fill var(--time) var(--function-cubic);
   background-color: transparent;
+  height: 40px;
 }
 
 .mobile-menu__item:not(:last-child) {
@@ -310,7 +311,7 @@ body {
   background-position: center;
   background-size: cover;
   background-color: var(--body-bg-color);
-  max-width: 1600px;
+  /* max-width: 1600px; */
   margin-left: auto;
   margin-right: auto;
   justify-content: end;
