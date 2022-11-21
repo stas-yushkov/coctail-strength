@@ -515,6 +515,24 @@ input {
   align-items: center;
 }
 
+.volume-btn-minus,
+.volume-btn-plus {
+  display: flex;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  justify-content: center;
+}
+
+.volume-btn-minus {
+  margin-right: 15px;
+}
+
+.volume-btn-plus {
+  margin-left: 15px;
+}
+
 /* RESULTS */
 
 .results-title {
