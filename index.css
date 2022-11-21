@@ -491,6 +491,14 @@ input {
   width: 100%;
 }
 
+.volume > .volume-button {
+  opacity: 0;
+}
+
+.volume:hover > .volume-button {
+  opacity: 1;
+}
+
 .strength-label,
 .volume-label {
   display: flex;
