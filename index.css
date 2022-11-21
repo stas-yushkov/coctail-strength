@@ -203,6 +203,7 @@ body {
     height: 100vh;
     padding: 48px 40px;
     background-color: var(--body-bg-color);
+    background-image: var(--main-background-gradient);
 
     overflow-y: scroll;
     z-index: 999;
