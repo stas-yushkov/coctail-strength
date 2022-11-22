@@ -88,8 +88,6 @@ const redraw = () => {
   // console.log();
   resultCoctailDivHeight
 
-  // TODO: fix fails on zeros volume
-  // TODO: fix separator?
   // TODO: fix ingridient color?
 
   resultIngridientDivList.forEach((elem, idx) => {
