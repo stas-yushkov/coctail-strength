@@ -12,7 +12,8 @@ const thumb = document.querySelector('.thumb');
 const resultCoctailDiv = document.querySelector('.coctail-vis');
 const resultIngridientDivList = document.querySelectorAll('.ingridient-vis');
 
-const resultText = document.querySelector('p.JS-result');
+const resultNumber = document.querySelector('p.JS-result-number');
+const resultText = document.querySelector('p.JS-result-text');
 const resultButton = document.querySelector('button.JS-result-button');
 
 const resultCoctailDivHeight = resultCoctailDiv.clientHeight;
@@ -34,15 +35,21 @@ const recalc = () => {
 
   const coctailStrength = Math.round((alcoholWeight / coctailWeight) * 1000) / 10;
 
-  if (!coctailStrength) {
-    return resultText.textContent = '... схоже, тут безалкогольний коктейль ...';
+  if (coctailStrength === 0) {
+    resultNumber.textContent = `${coctailStrength}%`;
+    resultText.textContent = '... схоже, тут безалкогольний коктейль ...';
+    return;
   }
 
   if (coctailStrength >= 90) {
-    return resultText.textContent = `${coctailStrength}% ... розірве в друзки ...`;
+    resultNumber.textContent = `${coctailStrength}%`;
+    resultText.textContent = `... розірве в друзки ...`;
+    return;
   }
 
-  return resultText.textContent = `${coctailStrength}%`;
+  resultNumber.textContent = `${coctailStrength}%`;
+  resultText.textContent = `міцності`;
+  return;
 }
 
 const redraw = () => {
