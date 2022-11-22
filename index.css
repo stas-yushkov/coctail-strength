@@ -29,6 +29,8 @@
   --button-bg-focus-color: rgba(24, 29, 83, 0.6);
   --button-text-color: #c0c0c0;
 
+  --ingridient-bottom-color: rgba(24, 29, 83, 0.6);
+
   --function-cubic: cubic-bezier(0.4, 0, 0.2, 1);
   --time: 250ms;
 }
@@ -592,19 +594,36 @@ button:focus {
 }
 
 .coctail-vis {
-  height: 129px;
+  height: 200px;
+  /* height: 129px; */
   width: 85px;
   margin: 0 auto;
-  background-color: #adbac2;
+  border-left: 2px solid var(--white);
+  border-right: 2px solid var(--white);
+  border-bottom: 2px solid var(--white);
 }
 
 .ingridient-vis {
+  position: relative;
   height: 25%;
-  background-color: #4fb1ee;
-  border-bottom: 2px solid #469dd3;
+  background-color: transparent;
+  /* border-bottom: 2px solid var(--ingridient-bottom-color); */
 }
+
+.ingridient-vis:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  /* height: 2px; */
+  height: 1px;
+  bottom: 0;
+  background-color: var(--white);
+  /* background-color: var(--ingridient-bottom-color); */
+  /* border-bottom: 2px solid var(--ingridient-bottom-color); */
+}
+
 .ingridient-vis:last-child {
-  border-bottom: none;
+  /* border-bottom: none; */
 }
 
 .display-none {

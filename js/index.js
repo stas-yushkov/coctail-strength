@@ -8,7 +8,6 @@ const strengthLabelList = document.querySelectorAll('span.JS-strength-result');
 const volumeInputList = document.querySelectorAll('input.JS-volume-input');
 const volumeLabelList = document.querySelectorAll('span.JS-volume-result');
 
-const thumb = document.querySelector('.thumb');
 const resultCoctailDiv = document.querySelector('.coctail-vis');
 const resultIngridientDivList = document.querySelectorAll('.ingridient-vis');
 
@@ -17,8 +16,6 @@ const resultText = document.querySelector('p.JS-result-text');
 const resultButton = document.querySelector('button.JS-result-button');
 
 const resultCoctailDivHeight = resultCoctailDiv.clientHeight;
-
-thumb.classList.add('display-none')
 
 const recalc = () => {
   const initialWeight = 0;
@@ -70,18 +67,31 @@ const redraw = () => {
   // resultIngridientDivList[idx].style.backgroundColor = 'red';
   // resultIngridientDivList[idx].style.height = '10px';
   // style.backgroundColor = "teal"
-  console.log();
+  // console.log();
   resultCoctailDivHeight
 
   // TODO: fix fails on zeros
-  // TODO: del image?
+  // TODO: fix separator?
+  // TODO: fix ingridient color?
 
   resultIngridientDivList.forEach((elem, idx) => {
+
+    // console.dir(elem);
+
     elem.style.height = `${(coctailsArr[idx].weight * resultCoctailDivHeight) / coctailWeight}px`;
     // console.log(Math.round(255 * (coctailsArr[idx].strength) / 100));
 
     const color = coctailsArr[idx].strength;
     elem.style.backgroundColor = `rgb(20%, 10%, ${color}%)`;
+
+    // elem.classList.remove('display-none');
+    // elem.style.borderWidth = '2px';
+
+    if (!coctailsArr[idx].weight) {
+      // elem.style.borderWidth = '0';
+      // elem.classList.add('display-none');
+      // return
+    };
 
     // const color = Math.round(255 * (coctailsArr[idx].strength) / 100);
     // elem.style.backgroundColor = `rgb(0, 0, ${color})`;
