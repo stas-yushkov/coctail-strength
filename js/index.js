@@ -30,6 +30,12 @@ const recalc = () => {
     , initialWeight
   );
 
+  if (!coctailWeight) {
+    resultNumber.textContent = '...';
+    resultText.textContent = '... схоже, тут пусто ...';
+    return;
+  }
+
   const coctailStrength = Math.round((alcoholWeight / coctailWeight) * 1000) / 10;
 
   if (coctailStrength === 0) {
@@ -45,7 +51,8 @@ const recalc = () => {
   }
 
   resultNumber.textContent = `${coctailStrength}%`;
-  resultText.textContent = `міцності`;
+  resultText.textContent = 'та й таке )';
+  // resultText.textContent = `міцності`;
   return;
 }
 
@@ -81,7 +88,7 @@ const redraw = () => {
   // console.log();
   resultCoctailDivHeight
 
-  // TODO: fix fails on zeros
+  // TODO: fix fails on zeros volume
   // TODO: fix separator?
   // TODO: fix ingridient color?
 
