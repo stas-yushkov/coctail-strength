@@ -607,6 +607,8 @@ button:focus {
   position: relative;
   height: 25%;
   background-color: transparent;
+  transition: height var(--time) var(--function-cubic),
+    background-color var(--time) var(--function-cubic);
   /* border-bottom: 2px solid var(--ingridient-bottom-color); */
 }
 
