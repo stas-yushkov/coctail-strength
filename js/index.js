@@ -13,7 +13,7 @@ const resultIngridientDivList = document.querySelectorAll('.ingridient-vis');
 
 const resultNumber = document.querySelector('p.JS-result-number');
 const resultText = document.querySelector('p.JS-result-text');
-const resultButton = document.querySelector('button.JS-result-button');
+// const resultButton = document.querySelector('button.JS-result-button');
 
 const resultCoctailDivHeight = resultCoctailDiv.clientHeight;
 
@@ -135,6 +135,7 @@ strengthLabelList.forEach((_, idx) => {
   }
 })
 redraw();
+debouncedRecalc();
 
 document.addEventListener('input', e => {
   strengthInputList.forEach((item, idx) => {
@@ -154,4 +155,4 @@ document.addEventListener('input', e => {
   debouncedRecalc();
 })
 
-resultButton.addEventListener('click', recalc);
+// resultButton.addEventListener('click', recalc);
