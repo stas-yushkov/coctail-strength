@@ -29,8 +29,6 @@
   --button-bg-focus-color: rgba(24, 29, 83, 0.6);
   --button-text-color: #c0c0c0;
 
-  --ingridient-bottom-color: rgba(24, 29, 83, 0.6);
-
   --function-cubic: cubic-bezier(0.4, 0, 0.2, 1);
   --time: 250ms;
 
@@ -582,22 +580,8 @@ button:focus {
   cursor: pointer;
 }
 
-.thumb {
-  display: flex;
-  justify-content: center;
-
-  margin-bottom: 30px;
-}
-
-@media screen and (max-width: 1023px) {
-  .thumb {
-    margin-bottom: 20px;
-  }
-}
-
 .coctail-vis {
   height: 200px;
-  /* height: 129px; */
   width: 85px;
   margin: 0 auto;
   border-left: 2px solid var(--white);
@@ -608,28 +592,17 @@ button:focus {
 .ingridient-vis {
   position: relative;
   height: 25%;
+  /* TODO revrite height coresponds to siblings num (css) */
   background-color: transparent;
   transition: height var(--default-transition),
     background-color var(--default-transition);
-  /* border-bottom: 2px solid var(--ingridient-bottom-color); */
 }
 
 .ingridient-vis:after {
   content: '';
   position: absolute;
   width: 100%;
-  /* height: 2px; */
   height: 1px;
   bottom: 0;
   background-color: var(--white);
-  /* background-color: var(--ingridient-bottom-color); */
-  /* border-bottom: 2px solid var(--ingridient-bottom-color); */
-}
-
-.ingridient-vis:last-child {
-  /* border-bottom: none; */
-}
-
-.display-none {
-  display: none;
 }
