@@ -492,6 +492,14 @@ input {
   width: 100%;
 }
 
+.volume > .volume-button {
+  opacity: 0;
+}
+
+.volume:hover > .volume-button {
+  opacity: 1;
+}
+
 .strength-label,
 .volume-label {
   display: flex;
@@ -515,6 +523,24 @@ input {
   display: flex;
   align-items: center;
   margin-left: 10px;
+}
+
+.volume-btn-minus,
+.volume-btn-plus {
+  display: flex;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  justify-content: center;
+}
+
+.volume-btn-minus {
+  margin-right: 15px;
+}
+
+.volume-btn-plus {
+  margin-left: 15px;
 }
 
 /* RESULTS */
