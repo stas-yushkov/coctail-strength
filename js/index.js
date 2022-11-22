@@ -49,6 +49,17 @@ const recalc = () => {
   return;
 }
 
+const debounce = (func, timeout = 300) => {
+  let timer = null;
+
+  return () => {
+    clearTimeout(timer);
+    timer = setTimeout(func, timeout)
+  }
+}
+
+const debouncedRecalc = debounce(() => recalc());
+
 const redraw = () => {
   const initialWeight = 0;
 
@@ -139,7 +150,8 @@ document.addEventListener('input', e => {
       coctailsArr[idx].weight = Number(e.target.value);
     }
   })
-  redraw()
+  redraw();
+  debouncedRecalc();
 })
 
 resultButton.addEventListener('click', recalc);
