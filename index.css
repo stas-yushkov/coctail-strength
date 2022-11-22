@@ -31,6 +31,8 @@
 
   --function-cubic: cubic-bezier(0.4, 0, 0.2, 1);
   --time: 250ms;
+
+  --default-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 p,
@@ -85,18 +87,19 @@ body {
 /* MAIN */
 
 .main {
-  padding: 0 40px;
+  padding-top: 30px;
   margin: 0 auto;
   background-image: var(--main-background-gradient);
 }
 
-@media screen and (max-width: 1023px) {
-  .main {
-    padding: 0 10px;
-  }
+.main-container {
+  padding: 0 30px;
 }
 
-.main-container {
+@media screen and (max-width: 1023px) {
+  .main-container {
+    padding: 0 10px;
+  }
 }
 
 /* HEADER */
@@ -112,7 +115,7 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 60px;
-  padding: 0 40px;
+  padding: 0 30px;
 }
 
 @media screen and (max-width: 1023px) {
@@ -167,9 +170,9 @@ body {
   line-height: 1;
   letter-spacing: 0.03em;
 
-  font-size: 20px;
+  font-size: 18px;
   white-space: nowrap;
-  padding: 0 10px;
+  padding: 0 5px;
   min-height: 60px;
   display: flex;
   align-items: center;
@@ -203,6 +206,7 @@ body {
     height: 100vh;
     padding: 48px 40px;
     background-color: var(--body-bg-color);
+    background-image: var(--main-background-gradient);
 
     overflow-y: scroll;
     z-index: 999;
@@ -249,7 +253,7 @@ body {
 .menu-toggle-open:focus,
 .menu-toggle-close:hover,
 .menu-toggle-close:focus {
-  fill: var(--accent-color);
+  background-color: var(--button-bg-color);
 }
 
 .menu-toggle_icon {
@@ -264,6 +268,7 @@ body {
   right: -25px;
   transition: fill var(--time) var(--function-cubic);
   background-color: transparent;
+  height: 40px;
 }
 
 .mobile-menu__item:not(:last-child) {
@@ -301,7 +306,7 @@ body {
 }
 
 .hero {
-  padding: 250px 40px 70px 40px;
+  padding: 250px 15% 70px;
 
   background-color: var(--body-bg-color);
   background-image: var(--hero-bg-gradient), url(./images/hero-bg.jpg);
@@ -310,15 +315,14 @@ body {
   background-position: center;
   background-size: cover;
   background-color: var(--body-bg-color);
-  max-width: 1600px;
+
   margin-left: auto;
   margin-right: auto;
-  justify-content: end;
 }
 
 @media screen and (max-width: 1023px) {
   .hero {
-    padding: 100px 10px 40px 10px;
+    padding: 100px 5% 40px;
   }
 }
 
@@ -356,19 +360,19 @@ body {
   transition: color var(--time) var(--function-cubic);
 }
 
-h1 {
+.main-title {
   text-align: center;
   font-size: 40px;
   font-weight: 900;
   line-height: 1.5;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  margin: 0;
-  padding: 30px 0;
+  margin: 0 0 30px;
+  padding: 0;
 }
 
 @media screen and (max-width: 1023px) {
-  h1 {
+  .main-title {
     font-size: 20px;
   }
 }
@@ -381,10 +385,8 @@ h1 {
   font-size: 25px;
   font-weight: 400;
 
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 0 30px;
-  margin: 0;
+  padding: 0;
+  margin: 0 auto 30px;
 }
 
 @media screen and (max-width: 1023px) {
@@ -399,14 +401,14 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 0 50px 30px;
+  padding: 0 0 30px;
 }
 
 @media screen and (max-width: 1023px) {
   .bars-results {
     display: block;
     margin: 0;
-    padding: 0 0 15px 0;
+    padding: 0 0 15px;
   }
 }
 
@@ -447,7 +449,6 @@ h1 {
   font-size: 25px;
   font-weight: 700;
 
-  padding-left: 10px;
   width: 53px;
   text-align: right;
 }
@@ -504,7 +505,7 @@ input {
   display: flex;
   font-size: 25px;
   font-weight: 700;
-  padding-right: 10px;
+  margin-right: 10px;
   flex-basis: 120px;
   flex-shrink: 0;
 }
@@ -521,6 +522,7 @@ input {
 .volume-ml {
   display: flex;
   align-items: center;
+  margin-left: 10px;
 }
 
 .volume-btn-minus,
@@ -604,15 +606,29 @@ button:focus {
   cursor: pointer;
 }
 
-.thumb {
-  display: flex;
-  justify-content: center;
-
-  margin-bottom: 30px;
+.coctail-vis {
+  height: 200px;
+  width: 85px;
+  margin: 0 auto;
+  border-left: 2px solid var(--white);
+  border-right: 2px solid var(--white);
+  border-bottom: 2px solid var(--white);
 }
 
-@media screen and (max-width: 1023px) {
-  .thumb {
-    margin-bottom: 20px;
-  }
+.ingridient-vis {
+  position: relative;
+  height: 25%;
+  /* TODO revrite height coresponds to siblings num (css) */
+  background-color: transparent;
+  transition: height var(--default-transition),
+    background-color var(--default-transition);
+}
+
+.ingridient-vis:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  background-color: var(--white);
 }
